@@ -1,0 +1,8 @@
+FROM devopsedu/webapp
+Maintainer "Nishant"
+ADD website /var/www/html
+RUN apt-get update -y
+RUN apt-get install vim -y
+RUN apt-get install tree -y
+RUN rm /var/www/html/index.html
+CMD apache2ctl -D FOREGROUND
